@@ -16,6 +16,9 @@ mongoose.connect("mongodb+srv://Shivam:Shivam@selab-erxmh.mongodb.net/test?retry
 })
 
 
+const business=require('./routes/business.js')
+
+
 
 app.use(morgan('dev'));
 app.use(parser.json());
@@ -27,6 +30,8 @@ app.use("*",function(req,res,next){
     next();
 })
 
+
+app.use('/business',business);
 
 
 
