@@ -9,4 +9,4 @@ const orderSchema=mongoose.Schema({
     statusOfDelivery:{type:Number,required:true,default:1}
 })
 
-module.exports=mongoose.model('business','businessSchema');
+module.exports=mongoose.model('order',orderSchema);

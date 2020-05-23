@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+const mongoose=require('mongoose');
 
 const businessSchema=mongoose.Schema({
     _id:mongoose.Schema.Types.ObjectId,
@@ -7,4 +7,4 @@ const businessSchema=mongoose.Schema({
     noOfOrders:{type:Number,required:true,default:0}
 })
 
-module.exports=mongoose.model('business','businessSchema');
+module.exports=mongoose.model('business',businessSchema);

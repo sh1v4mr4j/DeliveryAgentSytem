@@ -7,4 +7,4 @@ const staffSchema=mongoose.Schema({
     noOfOrder:{type:String,required:true,default:0}
 })
 
-module.exports=mongoose.model('staff','staffSchema');
+module.exports=mongoose.model('staff',staffSchema);

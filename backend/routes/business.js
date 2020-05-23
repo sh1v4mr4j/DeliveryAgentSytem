@@ -1,19 +1,21 @@
 const express=require('express')
-const router=require('router')
+const router=express.Router();
 const mongoose=require('mongoose')
-const staffModel=require('../models/staffModel.js')
-const orderModel=require('../models/orderModel.js')
+const businessModel=require('../models/businessModel.js')
+// const orderModel=require('../models/orderModel.js')
 router.post('/',function(req,res){
     const newBusiness=new businessModel({
-        _id:new mongoose.isValidObjectId,
+        _id: new mongoose.Types.ObjectId(),
         name:req.body.name,
         type:req.body.type,
         noOfOrders:0
     })
+
+    console.log(newBusiness._id)
     businessModel.find({name:req.body.name})
     .exec()
     .then(business=>{
-        if(businessModel.length>0) res.json({"message":"Name already exist"})
+        if(business.length>0) res.json({"message":"Name already exist"})
         else{
             newBusiness.save();
             res.json({"message":"Account Created"})
@@ -23,7 +25,7 @@ router.post('/',function(req,res){
     })
 })
 router.post('/login',function(req,res){
-    staffModel.findOne({name:req.body.name})
+    businessModel.findOne({name:req.body.name})
     .exec()
     .then(user=>{
         if(user!=null){
@@ -46,6 +48,6 @@ router.get('/:name',function(req,res){
     })
 })
 
-router.
+module.exports=router;
 
 
