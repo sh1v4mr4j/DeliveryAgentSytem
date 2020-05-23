@@ -9,7 +9,7 @@ router.post('/login',function(req,res){
     .exec()
     .then(user=>{
         if(user!=null){
-            if(user.age==req.body.age){
+            if(user.type==req.body.type){
                 res.json({"message":"Authentication Successful"}).status(200);
             }else{
                 res.json({"message":"Authentication Failed"}).status(200);
