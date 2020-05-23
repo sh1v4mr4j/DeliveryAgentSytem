@@ -18,6 +18,7 @@ mongoose.connect("mongodb+srv://Shivam:Shivam@selab-erxmh.mongodb.net/test?retry
 
 const business=require('./routes/business.js')
 const staff=require('./routes/staff.js')
+const order=require('./routes/order.js')
 
 
 app.use(morgan('dev'));
@@ -33,6 +34,7 @@ app.use("*",function(req,res,next){
 
 app.use('/business',business);
 app.use('/staff',staff);
+app.use('/order',order);
 
 
 
